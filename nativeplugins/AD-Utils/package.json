@@ -1,0 +1,28 @@
+{
+    "name": "通用函数",
+    "id": "AD-Utils",
+    "version": "1.1.0",
+    "description": "通用函数",
+    "_dp_type": "nativeplugin",
+    "_dp_nativeplugin": {
+        "ios": {
+            "plugins": [
+                {
+                    "type": "module",
+                    "name": "AD-Utils",
+                    "class": "ADUtilsModule"
+                }
+            ],
+            "integrateType": "framework",
+            "hooksClass": "ADUtilsProxy",
+            "framework": [
+                "UniPluginADUtils.framework"
+            ],
+            "plists": {},
+            "privacies": [
+                "NSCalendarsUsageDescription"
+            ],
+            "deployementTarget": "8.0"
+        }
+    }
+}

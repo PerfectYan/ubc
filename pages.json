@@ -1,0 +1,72 @@
+{
+	"pages": [
+		//pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/guide/index",
+			"style": {}
+		},
+		{
+			"path": "pages/home/index",
+			"style": {}
+		},
+		{
+			"path": "pages/vip/index",
+			"style": {}
+		},
+		{
+			"path": "pages/addClock/index",
+			"style": {}
+		},
+		{
+			"path": "pages/add/index",
+			"style": {}
+		},
+		{
+			"path": "pages/record/index",
+			"style": {}
+		},
+		{
+			"path": "pages/setting/index",
+			"style": {}
+		}
+	],
+	"globalStyle": {
+		"navigationBarBackgroundColor": "#0081ff",
+		"navigationBarTitleText": "ColorUi for UniApp",
+		"navigationStyle": "custom",
+		"navigationBarTextStyle": "white"
+	},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#007AFF",
+		"borderStyle": "black",
+		"backgroundColor": "#F8F8F8",
+		"list": [
+			{
+				"pagePath": "pages/home/index",
+				"iconPath": "static/tabbar/home.png",
+				"selectedIconPath": "static/tabbar/home_cur.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/add/index",
+				"iconPath": "static/tabbar/add.png",
+				"selectedIconPath": "static/tabbar/add_cur.png",
+				"text": "添加"
+			},
+			{
+				"pagePath": "pages/record/index",
+				"iconPath": "static/tabbar/record.png",
+				"selectedIconPath": "static/tabbar/record_cur.png",
+				"text": "记录"
+			},
+			{
+				"pagePath": "pages/setting/index",
+				"iconPath": "static/tabbar/setting.png",
+				"selectedIconPath": "static/tabbar/setting_cur.png",
+				"text": "设置"
+			}
+		]
+	}
+
+}
