@@ -246,60 +246,6 @@
 		font-size: 24upx;
 		line-height: 34upx;
 	}
-
-	.link-wrap {
-		display: flex;
-		font-size: 30upx;
-		color: #ccc;
-		margin-top: 10upx;
-		justify-content: center;
-	}
-
-	.link {
-		margin: 0 50upx;
-		font-size: 24upx;
-	}
-
-
-	.apptestnnnn {
-		border-width: 1px;
-		border-color: #4cd964;
-		border-style: solid;
-	}
-
-	.apptest {
-		border-width: 1px;
-		border-color: #007aff;
-		border-style: solid;
-	}
-
-	.swiper-to-home {
-		position: absolute;
-		z-index: 999;
-		right: 40upx;
-		/* #ifndef MP */
-		top: 80upx;
-		/* #endif */
-		/* #ifdef MP */
-		top: 150upx;
-		/* #endif */
-	}
-
-	.swiper-to-home-text {
-		color: #ffffff;
-		text-align: center;
-		background-color: rgba(0, 0, 0, 0.5);
-		border-width: 1upx;
-		border-color: #ffffff;
-		border-style: solid;
-		border-radius: 30upx;
-		font-size: 28upx;
-		padding-top: 5upx;
-		padding-bottom: 5upx;
-		padding-left: 25upx;
-		padding-right: 25upx;
-	}
-
 	.indicator {
 		width: 714upx;
 		height: 30upx;
