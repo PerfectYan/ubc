@@ -2,8 +2,8 @@
     "name" : "美容时钟",
     "appid" : "__UNI__3A1F018",
     "description" : "简洁又实用的美容提醒神器，爱美人士必备",
-    "versionName" : "1.0.3",
-    "versionCode" : 3,
+    "versionName" : "1.0.4",
+    "versionCode" : 4,
     "transformPx" : false,
     "app-plus" : {
         /* 5+App特有相关 */

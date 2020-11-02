@@ -25,7 +25,7 @@
 					</view>
 				</view>
 				<view class="sub-info f12">
-					订阅价格取于选择的订单套餐,订阅期限内，您可以无限制使用App所有功能，订阅费用在您确认购买后通过iTunes账号收取。订阅自动更新，到期前24小时，苹果会自动为您从iTunes账号扣费，成功后有效期自动延长一个周期。购买后，您可以前往ios-账号设置，管理订阅和关闭自动续费。
+					用户确认购买并付款后计入iTunes账户，除非您在到期日24小时前取消，否则我们将在您会员过期前24小时进行自动进行续费（含免费试用），扣费成功后订阅周期顺延一个订阅周期。
 				</view>
 				<view class="privacy-terms flex justify-center align-center">
 					<view class="privacy" @tap="openUrl(privacy)">隐私策略</view>
@@ -51,7 +51,7 @@
 					</view>
 				</view>
 				<view class="sub-info f12">
-					订阅价格取于选择的订单套餐,订阅期限内，您可以无限制使用App所有功能，订阅费用在您确认购买后通过iTunes账号收取。订阅自动更新，到期前24小时，苹果会自动为您从iTunes账号扣费，成功后有效期自动延长一个周期。购买后，您可以前往ios-账号设置，管理订阅和关闭自动续费。
+					用户确认购买并付款后计入iTunes账户，除非您在到期日24小时前取消，否则我们将在您会员过期前24小时进行自动进行续费（含免费试用），扣费成功后订阅周期顺延一个订阅周期。
 				</view>
 				<view class="privacy-terms flex justify-center align-center">
 					<view class="privacy" @tap="openUrl(privacy)">隐私策略</view>
@@ -66,18 +66,18 @@
 					<view class="sub-items flex justify-around">
 						<view class="sub-item" @tap="requestPayment('weekSub')">
 							<view>周订阅</view>
-							<view>8.00/周</view>
+							<view>{{orderList[0].price}}/周</view>
 							<view class="f12">自动续费</view>
 						</view>
 						<view class="sub-item" @tap="requestPayment('yearSub')">
 							<view>年订阅</view>
-							<view>98.00/年</view>
+							<view>{{orderList[1].price}}/年</view>
 							<view class="f12">自动续费</view>
 						</view>
 					</view>
 				</view>
 				<view class="sub-info f12">
-					订阅价格取于选择的订单套餐,订阅期限内，您可以无限制使用App所有功能，订阅费用在您确认购买后通过iTunes账号收取。订阅自动更新，到期前24小时，苹果会自动为您从iTunes账号扣费，成功后有效期自动延长一个周期。购买后，您可以前往ios-账号设置，管理订阅和关闭自动续费。
+					用户确认购买并付款后计入iTunes账户，除非您在到期日24小时前取消，否则我们将在您会员过期前24小时进行自动进行续费（含免费试用），扣费成功后订阅周期顺延一个订阅周期。
 				</view>
 				<view class="privacy-terms flex justify-center align-center">
 					<view class="privacy" @tap="openUrl(privacy)">隐私策略</view>
@@ -102,7 +102,8 @@
 				bgVip: bgVip,
 				privacy: app.globalData.privacy,
 				terms: app.globalData.terms,
-				productIds: app.globalData.productIds
+				productIds: app.globalData.productIds,
+				orderList: []
 			}
 		},
 		onLoad: function() {
@@ -154,7 +155,7 @@
 			errorMsg() {
 				uni.showToast({
 					icon: 'none',
-					title: '不支持苹果内购'
+					title: '暂不支持苹果 iap 支付'
 				});
 			},
 			requestOrder() {
@@ -163,6 +164,8 @@
 				})
 				iapChannel.requestOrder(this.productIds, (orderList) => { //必须调用此方法才能进行 iap 支付
 					isReady = true;
+					this.orderList = orderList;
+					console.log('requestOrder success: ' + JSON.stringify(orderList));
 					uni.hideLoading();
 				}, (e) => {
 					isReady = false;
