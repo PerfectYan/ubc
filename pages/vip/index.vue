@@ -14,12 +14,12 @@
 					<view class="sub-items flex justify-around">
 						<view class="sub-item" @tap="requestPayment('weekSub')">
 							<view>周订阅</view>
-							<view>8.00/周</view>
+							<view>{{orderList[0].price}}元/周</view>
 							<view class="f12">自动续费</view>
 						</view>
 						<view class="sub-item" @tap="requestPayment('yearSub')">
 							<view>年订阅</view>
-							<view>98.00/年</view>
+							<view>{{orderList[1].price}}元/年</view>
 							<view class="f12">自动续费</view>
 						</view>
 					</view>
@@ -40,12 +40,12 @@
 					<view class="sub-items flex justify-around">
 						<view class="sub-item" @tap="requestPayment('weekSub')">
 							<view>周订阅</view>
-							<view>8.00/周</view>
+							<view>{{orderList[0].price}}元/周</view>
 							<view class="f12">自动续费</view>
 						</view>
 						<view class="sub-item" @tap="requestPayment('yearSub')">
 							<view>年订阅</view>
-							<view>98.00/年</view>
+							<view>{{orderList[1].price}}元/年</view>
 							<view class="f12">自动续费</view>
 						</view>
 					</view>
@@ -66,12 +66,12 @@
 					<view class="sub-items flex justify-around">
 						<view class="sub-item" @tap="requestPayment('weekSub')">
 							<view>周订阅</view>
-							<view>{{orderList[0].price}}/周</view>
+							<view>{{orderList[0].price}}元/周</view>
 							<view class="f12">自动续费</view>
 						</view>
 						<view class="sub-item" @tap="requestPayment('yearSub')">
 							<view>年订阅</view>
-							<view>{{orderList[1].price}}/年</view>
+							<view>{{orderList[1].price}}元/年</view>
 							<view class="f12">自动续费</view>
 						</view>
 					</view>
@@ -103,7 +103,10 @@
 				privacy: app.globalData.privacy,
 				terms: app.globalData.terms,
 				productIds: app.globalData.productIds,
-				orderList: []
+				orderList: [
+					{price: 0},
+					{price: 0}
+				]
 			}
 		},
 		onLoad: function() {

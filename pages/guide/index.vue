@@ -40,7 +40,7 @@
 					<view class="guide-desc3-btn">
 						<view @click="requestPayment" class="open-btn  slide-btn">立即开启</view>
 					</view>
-					<view class="price">以{{orderList[0].price}}/周的价格收取费用</view>
+					<view class="price">以{{orderList[0].price}}元/周的价格收取费用</view>
 					<view class="sub-info f12">
 						用户确认购买并付款后计入iTunes账户，除非您在到期日24小时前取消，否则我们将在您会员过期前24小时进行自动进行续费（含免费试用），扣费成功后订阅周期顺延一个订阅周期。
 					</view>
@@ -91,21 +91,21 @@
 			};
 		},
 		onLoad: function() {
-			// plus.payment.getChannels((channels) => {
-			// 	console.log("获取到channel" + JSON.stringify(channels))
-			// 	for (var i in channels) {
-			// 		var channel = channels[i];
-			// 		if (channel.id === 'appleiap') {
-			// 			iapChannel = channel;
-			// 			this.requestOrder();
-			// 		}
-			// 	}
-			// 	if (!iapChannel) {
-			// 		this.errorMsg()
-			// 	}
-			// }, (error) => {
-			// 	this.errorMsg()
-			// });
+			plus.payment.getChannels((channels) => {
+				console.log("获取到channel" + JSON.stringify(channels))
+				for (var i in channels) {
+					var channel = channels[i];
+					if (channel.id === 'appleiap') {
+						iapChannel = channel;
+						this.requestOrder();
+					}
+				}
+				if (!iapChannel) {
+					this.errorMsg()
+				}
+			}, (error) => {
+				this.errorMsg()
+			});
 		},
 		methods: {
 			errorMsg() {
@@ -148,13 +148,13 @@
 					},
 					success: (e) => {
 						uni.setStorageSync('hasSubcripted', 'hasSubcripted')
-						uni.navigateTo({
+						uni.switchTab({
 							url: '../home/index'
 						})
 					},
 					fail: (e) => {
 						console.log(e);
-						uni.navigateTo({
+						uni.switchTab({
 							url: '../home/index'
 						})
 					},

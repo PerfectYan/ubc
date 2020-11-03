@@ -1,9 +1,9 @@
 {
-    "name" : "美容时钟",
+    "name" : "悬浮时钟-提醒如此及时的时钟",
     "appid" : "__UNI__3A1F018",
     "description" : "简洁又实用的美容提醒神器，爱美人士必备",
-    "versionName" : "1.0.4",
-    "versionCode" : 4,
+    "versionName" : "1.0.5",
+    "versionCode" : 5,
     "transformPx" : false,
     "app-plus" : {
         /* 5+App特有相关 */
@@ -71,7 +71,7 @@
                 },
                 "statics" : {
                     "umeng" : {
-                        "appkey_ios" : "5f97e4c21c520d30739a1c86",
+                        "appkey_ios" : "5fa11b761c520d30739f71d6",
                         "channelid_ios" : "iOS",
                         "appkey_android" : "友盟统计平台申请应用获取的Android平台appkey",
                         "channelid_android" : "Android"
